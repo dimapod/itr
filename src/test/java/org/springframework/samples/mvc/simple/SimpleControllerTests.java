@@ -1,12 +1,22 @@
 package org.springframework.samples.mvc.simple;
 
+import com.alchemyapi.api.AlchemyAPI;
+import org.junit.Test;
+import org.w3c.dom.Document;
+
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
+import java.io.StringWriter;
+
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
-
-import org.junit.Test;
 
 public class SimpleControllerTests {
 
@@ -25,6 +35,43 @@ public class SimpleControllerTests {
         when(simpleController.simple()).thenReturn("Mockito rocks");
         simpleController.simple();
         verify(simpleController, times(1));
+    }
+
+    @Test
+    public void alchemy() throws Exception {
+        // Create an AlchemyAPI object.
+        AlchemyAPI alchemyObj = AlchemyAPI.GetInstanceFromFile("/tmp/alchemy_api_key.txt");
+
+/*
+        // Extract a ranked list of named entities for a web URL.
+        Document doc = alchemyObj.URLGetRankedNamedEntities("http://www.techcrunch.com/");
+        System.out.println(getStringFromDocument(doc));
+*/
+
+        // Extract a ranked list of named entities from a text string.
+        Document doc = alchemyObj.TextGetRankedNamedEntities(
+                "Hello there, my name is Bob Jones. I live in the United States of America.  " +
+                        "Where do you live, Fred?");
+        System.out.println(getStringFromDocument(doc));
+    }
+
+
+    // utility method
+    private static String getStringFromDocument(Document doc) {
+        try {
+            DOMSource domSource = new DOMSource(doc);
+            StringWriter writer = new StringWriter();
+            StreamResult result = new StreamResult(writer);
+
+            TransformerFactory tf = TransformerFactory.newInstance();
+            Transformer transformer = tf.newTransformer();
+            transformer.transform(domSource, result);
+
+            return writer.toString();
+        } catch (TransformerException ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
 }
