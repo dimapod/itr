@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc.simple.beans;
+package org.itrade.beans;
 
 public class TestVO {
     private String name;

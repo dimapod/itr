@@ -1,6 +1,8 @@
 package org.springframework.samples.mvc.simple;
 
 import com.alchemyapi.api.AlchemyAPI;
+import org.itrade.alchemy.AlchemyUtils;
+import org.itrade.controller.SimpleController;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
@@ -52,26 +54,6 @@ public class SimpleControllerTests {
         Document doc = alchemyObj.TextGetRankedNamedEntities(
                 "Hello there, my name is Bob Jones. I live in the United States of America.  " +
                         "Where do you live, Fred?");
-        System.out.println(getStringFromDocument(doc));
+        System.out.println(AlchemyUtils.getStringFromDocument(doc));
     }
-
-
-    // utility method
-    private static String getStringFromDocument(Document doc) {
-        try {
-            DOMSource domSource = new DOMSource(doc);
-            StringWriter writer = new StringWriter();
-            StreamResult result = new StreamResult(writer);
-
-            TransformerFactory tf = TransformerFactory.newInstance();
-            Transformer transformer = tf.newTransformer();
-            transformer.transform(domSource, result);
-
-            return writer.toString();
-        } catch (TransformerException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
-
 }
