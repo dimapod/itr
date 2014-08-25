@@ -1,6 +1,6 @@
 package org.itrade.alchemy;
 
-import com.alchemyapi.api.AlchemyAPI;
+import org.itrade.alchemy.api.AlchemyAPI;
 import org.itrade.beans.SimpleTextBean;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;

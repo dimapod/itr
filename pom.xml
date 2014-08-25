@@ -16,7 +16,8 @@
 	</properties>
 	<dependencies>
 
-        <!-- Alchemy API -->
+<!--
+        &lt;!&ndash; Alchemy API &ndash;&gt;
         <dependency>
             <groupId>alchemyApi</groupId>
             <artifactId>com.alchemyApi</artifactId>
@@ -24,6 +25,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/AlchemyAPI.jar</systemPath>
         </dependency>
+-->
 
 		<!-- Spring -->
 		<dependency>
@@ -215,7 +217,7 @@
 				<version>9.0.6.v20130930</version>
 				<configuration>
 					<webApp>
-						<contextPath>/${project.artifactId}</contextPath>
+						<contextPath>/itrade</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>

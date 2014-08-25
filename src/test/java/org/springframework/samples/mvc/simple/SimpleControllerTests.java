@@ -1,7 +1,7 @@
 package org.springframework.samples.mvc.simple;
 
-import com.alchemyapi.api.AlchemyAPI;
 import org.itrade.alchemy.AlchemyUtils;
+import org.itrade.alchemy.api.AlchemyAPI;
 import org.itrade.controller.SimpleController;
 import org.junit.Test;
 import org.w3c.dom.Document;
@@ -39,7 +39,7 @@ public class SimpleControllerTests {
         verify(simpleController, times(1));
     }
 
-    @Test
+    //@Test
     public void alchemy() throws Exception {
         // Create an AlchemyAPI object.
         AlchemyAPI alchemyObj = AlchemyAPI.GetInstanceFromFile("/tmp/alchemy_api_key.txt");
