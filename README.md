@@ -1,4 +1,8 @@
-Spring MVC Boilerplate
-----------------------
-Spring MVC web framework for REST
+Project ITR
+-----------
+- Java 8
+- Spring MVC
+- Alchemy Integration
+- AngularJS
+
 
