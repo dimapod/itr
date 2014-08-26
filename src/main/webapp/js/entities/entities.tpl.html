@@ -6,8 +6,11 @@
       <label for="entitiesText">Text to analyse</label>
       <textarea id="entitiesText" ng-model="entitiesRequest.text" class="form-control" rows="6"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary" ng-disabled="!entitiesRequest.text.length">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-disabled="!entitiesRequest.text.length">
+      Submit
+    </button>
     <button class="btn btn-default" ng-click="entitiesRequest.text=''; entitiesResult=undefined">Clean</button>
+    <img src="img/spinner.gif" ng-show="hasPendingRequests()">
   </form>
 
   <div class="entities-result" ng-show="entitiesResult">

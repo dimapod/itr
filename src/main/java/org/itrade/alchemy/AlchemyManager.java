@@ -16,7 +16,8 @@ public class AlchemyManager {
     @PostConstruct
     public void init() {
         try {
-            alchemyObj = AlchemyAPI.GetInstanceFromFile("/tmp/alchemy_api_key.txt");
+            String home = System.getProperty("user.home");
+            alchemyObj = AlchemyAPI.GetInstanceFromFile(home + "/alchemy_api_key.txt");
         } catch (IOException e) {
             throw new RuntimeException("Alchemy API failed to initialise", e);
         }
