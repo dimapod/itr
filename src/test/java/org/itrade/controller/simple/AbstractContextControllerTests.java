@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc;
+package org.itrade.controller.simple;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

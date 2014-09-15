@@ -166,3 +166,10 @@ body {
 .nav > li a:hover, .nav > li a:focus {
   background-color: transparent;
 }
+
+.form-control.sentiment-3, .form-control.sentiment-4 {
+    background-color: darkseagreen;
+}
+.form-control.sentiment-1, .form-control.sentiment-2 {
+    background-color: rgb(255, 188, 188);;
+}

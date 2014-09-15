@@ -37,7 +37,7 @@ $padding: 2%;
 }
 
 .icon-spinner {
-  background-image:url('../img/spinner.gif');
+  background-image: url('../img/spinner.gif');
 }
 
 // ABN TREE
@@ -174,4 +174,12 @@ $padding: 2%;
   }
 }
 
+.form-control {
+  &.sentiment-1, &.sentiment-2 {
+    background-color: rgb(255, 188, 188);
+  }
+  &.sentiment-3, &.sentiment-4 {
+    background-color: darkseagreen;
+  }
+}
 

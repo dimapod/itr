@@ -5,8 +5,8 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="org.itrade.alchemy">
-        <context:exclude-filter type="regex" expression="org\.itrade\.alchemy\.controller.*"/>
+    <context:component-scan base-package="org.itrade">
+        <context:exclude-filter type="regex" expression="org\.itrade\.controller.*"/>
     </context:component-scan>
 
     <!-- Root Context: defines shared resources visible to all other web components -->
