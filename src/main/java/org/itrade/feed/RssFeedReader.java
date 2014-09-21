@@ -1,0 +1,37 @@
+package org.itrade.feed;
+
+import com.sun.syndication.feed.synd.SyndFeed;
+import com.sun.syndication.io.SyndFeedInput;
+import com.sun.syndication.io.XmlReader;
+import org.springframework.stereotype.Service;
+
+import java.net.URL;
+
+@Service
+public class RssFeedReader {
+
+    public void read(String url) {
+        boolean ok = false;
+        try {
+            URL feedUrl = new URL(url);
+
+            SyndFeedInput input = new SyndFeedInput();
+            SyndFeed feed = input.build(new XmlReader(feedUrl));
+
+            System.out.println(feed);
+
+            ok = true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("ERROR: " + ex.getMessage());
+        }
+
+        if (!ok) {
+            System.out.println();
+            System.out.println("FeedReader reads and prints any RSS/Atom feed type.");
+            System.out.println("The first parameter must be the URL of the feed to read.");
+            System.out.println();
+        }
+    }
+
+}

@@ -9,7 +9,7 @@
     <http pattern="/securityNone" security="none"/>
 
     <http use-expressions="true">
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/scss" access="isAuthenticated()"/>
         <http-basic/>
     </http>
 

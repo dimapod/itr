@@ -53,7 +53,37 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<!-- Logging -->
+
+        <!-- JMS -->
+
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+        <dependency>
+            <groupId>org.hornetq</groupId>
+            <artifactId>hornetq-core-client</artifactId>
+            <version>2.4.3.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hornetq</groupId>
+            <artifactId>hornetq-spring-integration</artifactId>
+            <version>2.4.3.Final</version>
+        </dependency>
+
+        <!-- RSS / Atom -->
+
+        <dependency>
+            <groupId>rome</groupId>
+            <artifactId>rome</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+
+        <!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -117,7 +147,15 @@
 			<version>2.3</version>
 		</dependency>
 
-		<!-- Security (used for CSRF protection only) -->
+        <!-- Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+
+
+        <!-- Security (used for CSRF protection only) -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
